@@ -1,0 +1,84 @@
+header {
+  display: flex;
+  justify-content: center;
+  padding: 1em 0em 1em 0em;
+}
+
+.header-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  // width: $width;
+  max-width: $max-width;
+}
+
+// Left Side
+.location {
+  label {
+    font-size: 2rem;
+  }
+
+  &.right { display: none; }
+
+  &-title-row {
+    display: flex;
+    align-items: flex-end;
+
+    .fa-map-marker-alt {
+      margin-right: 0.35em;
+      font-size: 1.5rem;
+    }
+
+    .location-edit {
+      padding-bottom: 0.35em;
+      &:hover {
+        font-size: 1.35rem;
+      }
+    }
+
+    .fa-edit {
+      margin-left: 0.35em;
+      margin-top: 0px;
+      color: $accent-light;
+      font-size: 1.3rem;
+    }
+
+    * {
+      height: 1.5em;
+    }
+  }
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .high-contrast-switch {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+      margin: 0em;
+    }
+
+    .shortTitle { display: none; }
+
+    .switch {
+      margin-left: 1em;
+    }
+
+  }
+
+
+  #clock {
+    width: 5em;
+    height: 1.5em;
+
+    font-size: 3rem;
+    text-align: center;
+    font-family: "Roboto Mono";
+  }
+}

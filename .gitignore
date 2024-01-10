@@ -1,0 +1,9 @@
+venv
+.venv
+.vscode
+__pycache__
+items.csv
+.webassets-cache
+node_modules
+app/static/main*
+app.db

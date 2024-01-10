@@ -1,0 +1,47 @@
+.select {
+  position: relative;
+
+  &:after { // Arrow
+    position: absolute;
+    top: 0.375em;
+    right: 0.5em;
+
+    padding: 0.5em 0.5em 0 0.5em;
+    height: 1.45em;
+
+    color: $accent-light;
+
+    content: "\f078";
+    font: normal normal normal 15px/1 FontAwesome;
+
+    pointer-events: none;
+  }
+
+  select {
+    width: 10em;
+    padding: 0.5em 2em 0.5em 0.5em;
+    border: 2px solid transparent;
+    border-bottom: 2px solid $accent-light;
+    height: 2.5em;
+
+    background: $background-mid;
+    color: $text-light;
+
+    font-size: 1rem;
+    appearance: none;
+    -webkit-appearance: none;
+
+    &:focus {
+      outline: none;
+    }
+
+    & option {
+      outline: none;
+
+      &:hover,
+      &:focus {
+        background-color: $accent-light;
+      }
+    }
+  }
+}

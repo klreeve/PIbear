@@ -1,0 +1,22 @@
+.submit-button {
+  border: 2px solid transparent;
+  padding: 0px 28px;
+
+  background-image: linear-gradient($gradient-dark, $gradient-light 100%);
+  background-color: $accent-light;
+  color: $accent-white;
+
+  line-height: 50px;
+  font-size: large;
+  text-align: center;
+
+  transition: all 0.12s ease 0s;
+  border-radius: 3px;
+
+  &:hover {
+    background-image: none;
+    color: $text-light;
+    background-color: $background-mid;
+    cursor: pointer;
+  }
+}

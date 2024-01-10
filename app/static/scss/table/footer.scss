@@ -1,0 +1,32 @@
+.table-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .container {
+    align-self: start;
+    display: flex;
+  }
+
+  .download-form {
+    width: 26em;
+    height: 100%;
+
+    form {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      select {
+        height: 100%;
+      }
+
+      .select::after {
+        top: .455em;
+        right: .175em;
+        font: normal normal normal 18px/1 FontAwesome;
+      }
+
+    }
+  }
+}

@@ -1,0 +1,42 @@
+// @import 'clock';
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import "./variables";
+@import "./components/components.scss";
+
+@import "./react-confirm-alert.scss";
+@import "./header.scss";
+@import "./item-input.scss";
+@import "./table/main.scss";
+@import "./locations.scss";
+@import "./error-page.scss";
+
+body {
+  margin: 0px;
+  background-color: $background-dark;
+  color: $text-mid;
+  font-family: "Lato", sans-serif;
+  font-size: larger;
+  transition: all .2s ease;
+}
+
+a {
+  color: $accent-mid;
+  text-decoration: none;
+  transition: all 0.1s ease 0s;
+
+  &:hover {
+    color: $accent-dark;
+  }
+}
+
+h2 {
+  color: $text-mid;
+}
+
+.invalid {
+  border: 2px solid $warning-red !important;
+}
+
+@import "./high-contrast.scss"; // Needs to be on bottom to override all other styles
+@import "./media-queries.scss";

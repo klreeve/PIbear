@@ -1,0 +1,26 @@
+{% import "macros.jinja" as macros %}
+
+<!DOCTYPE HTML5/>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page Not Found</title>
+
+    {% assets "scss_bundle" %}
+    <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+    {% endassets %}
+
+</head>
+
+<body {% if high_contrast %} class="high-contrast-body" {% endif %}>
+  <div class="error-page-wrapper">
+
+    <div class="error-container">
+      <h1>404</h1>
+      <div>Oops, the page you're looking for doesn't exist.</div>
+    </div>
+  </div>
+</body>
+
+</html>

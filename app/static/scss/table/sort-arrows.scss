@@ -1,0 +1,37 @@
+.sort-arrows {
+  display: flex;
+  flex-direction: column;
+  margin-left: .8em;
+
+  .arrow-up {
+    width: 0;
+    height: 0;
+    margin: 2px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid $background-dark;
+
+    .table-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .container {
+        align-self: start;
+        height: 100%;
+      }
+    }
+  }
+
+  .arrow-down {
+    width: 0;
+    height: 0;
+    margin: 2px;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid $background-dark;
+  }
+
+  .active-arrow-up { border-bottom-color: $accent-white; }
+  .active-arrow-down { border-top-color: $accent-white; }
+}

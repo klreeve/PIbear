@@ -1,0 +1,98 @@
+// General
+.high-contrast-body {
+  @include high-contrast-base();
+  border: none;
+
+  label {
+    color: white;
+  }
+
+  // Components
+  .select {
+    select {
+      @include high-contrast-base;
+    }
+  }
+
+  .submit-button {
+    border: 2px solid $accent-light;
+    background-image: none;
+    background-color: black;
+  }
+
+  // Form
+  .section-dark {
+    border-top: 3px solid white;
+    border-bottom: 3px solid white;
+    background-color: black;
+  }
+
+  input[type=text], .typeButton {
+    @include high-contrast-base;
+  }
+
+  .typeButton {
+    padding: 3px;
+    &:hover {
+      @include high-contrast-active-button();
+    }
+  }
+
+  .active-type {
+    @include high-contrast-active-button();
+  }
+
+  // Above Table
+  .icon {
+    color: white !important;
+    opacity: 75% !important;
+  }
+
+  p.page-box {
+    color: white;
+  }
+
+  a.page-box {
+    color: $accent-light;
+    &:hover {
+      color: $accent-white;
+    }
+  }
+
+  // Table
+  table {
+    border-bottom: 2px solid $accent-light;
+
+    tr:first-child th {
+      border-bottom: 2px solid $accent-light;
+      background-color: black;
+      background-image: none;
+      color: white;
+
+      .sort-arrows {
+        .arrow-down { border-top: 6px solid $accent-light; }
+        .active-arrow-down { border-top: 6px solid white; }
+        .arrow-up { border-bottom: 6px solid $accent-light; }
+        .active-arrow-up { border-bottom: 6px solid white; }
+      }
+
+
+    }
+
+    tr {
+      background-color: black;
+    }
+  }
+
+  // Tabs (Location Page)
+  .left .tabs {
+    div {
+      border: 2px solid $accent-light;
+
+      &:first-child {
+        border-right: none;
+      }
+    }
+  }
+}
+

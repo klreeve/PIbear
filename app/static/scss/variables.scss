@@ -1,0 +1,48 @@
+// Colors
+$background-xdark: #101820;
+$background-dark: #141f25;
+$background-mid: #1d2732;
+$background-light: #1b2831;
+$background-xlight: #586779;
+
+$accent-dark: #005ca6;
+$accent-mid: #0085f9;
+$accent-light: #00b0f6;
+$accent-white: #fcfcfc;
+
+$text-light: #ABABAB;
+$text-mid: $text-light;
+$text-dark: #495057;
+
+$gradient-dark: #1da0f9;
+$gradient-light: #49c0fc;
+
+$warning-red: firebrick;
+
+// Integers
+$max-width: 1000px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin active-button() {
+  color: $accent-white;
+  background-color: $background-xlight;
+  border-bottom: 10px solid $accent-light;
+}
+
+@mixin high-contrast-active-button {
+  @include active-button();
+  border: 2px solid transparent;
+  background-color: $accent-light;
+}
+
+@mixin high-contrast-base {
+  border: 2px solid white;
+  color: white;
+  background-color: black;
+}

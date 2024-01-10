@@ -1,0 +1,108 @@
+{% extends 'layouts/base.html' %} {% block content %}
+
+<header>
+  <div class="header-container locations-header">
+    <div>
+      <a href="{{ url_for('base.index')  }}"><i class="fas fa-long-arrow-alt-left"></i> &nbsp;Back</a>
+    </div>
+    <div id="clock" class="clock">00:00:00:00</div>
+  </div>
+</header>
+
+<section class="section-dark edit-locations-container">
+
+  <div class="title-container">
+    <h1 class="title">Edit Locations</h1>
+  </div>
+
+  <div class="edit-locations">
+    <div class="left">
+      <div class="tabs">
+        <div class="tablinks submit-button" onclick="openTab(event, `add-location`)">
+          <p>Add a Location</p>
+        </div>
+        <div class="tablinks submit-button" onclick="openTab(event, `upload-file`)">
+          <p>Location JSON</p>
+        </div>
+      </div>
+
+      <div id="add-location" class="tabcontent">
+        <h2>Add Location</h2>
+
+        <form action="{{ url_for('locations.add_location') }}" method="post">
+          {{ form.hidden_tag() }}
+
+
+
+
+          <div class="text-inputs">
+            <div {% if form.code.errors %} class="add-location-code invalid" {% else %} class="add-location-code" {% endif %}>
+              {{ form.code(size=16, placeholder=form.code.label.text, autofocus=true) }}
+            </div>
+
+            <div {% if form.name.errors %} class="add-location-name invalid" {% else %} class="add-location-name" {% endif %}>
+              {{ form.name(size=16, placeholder=form.name.label.text) }}
+            </div>
+          </div>
+
+          <p>{{ form.submit_add(class="submit-button") }}</p>
+        </form>
+      </div>
+
+      <div id="upload-file" class="tabcontent">
+        <h2>Upload Location JSON</h2>
+
+        <form action="{{ url_for('locations.upload_locations') }}" method="post" enctype="multipart/form-data">
+          {{ json_form.hidden_tag() }}
+
+
+          <label class="custom-file-upload submit-button">
+            <i class="fa fa-cloud-upload"></i> {{ json_form.file.label }}
+          </label>
+
+          {{ json_form.file(accept=".json") }}
+
+          <div class="upload-confirm">
+            {{ json_form.confirm }}
+            {{ json_form.confirm.label }}
+          </div>
+
+          <div>{{ json_form.submit_upload(class="submit-button") }}</div>
+        </form>
+      </div>
+
+      </form>
+    </div>
+
+    <div class="right">
+      <div>
+        <h2>Existing Locations</h2>
+
+        <table>
+          <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Actions</th>
+          </tr>
+
+          {% for location in locations %}
+          <tr>
+            <td>{{ location.code }}</td>
+            <td>{{ location.name }}</td>
+            <td><a href="{{ url_for('locations.delete', location_id=location.id) }}"><i class="icon-button fas fa-trash-alt"></i></a></td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+{% assets "js_bundle" %}
+    <script type=text/javascript src="{{ ASSET_URL }}"></script>
+{% endassets %}
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% macro error_block(form_field) %}
+  {% for error in form_field.errors %}
+    <p style="color: red;"><br>{{ error }}</p>
+  {% endfor %}
+{% endmacro %}
+
+{% macro location_select(form, class) %}
+  <div class="location {{class}}">
+    <div class="location-title-row">
+      {{ form.location.label }}
+      <a class="location-edit" href="{{ url_for('locations.index') }}"><i class="fas fa-edit"></i></a>
+    </div>
+    <div class="select">
+      {{ form.location(id="location " + class) }}
+    </div>
+  </div>
+{% endmacro %}

@@ -1,0 +1,22 @@
+table {
+  width: 100%;
+  border-spacing: 0 0.5em;
+  margin: 1em 0em 1em 0em;
+  text-align: center;
+
+  tr {
+    background-color: $background-mid;
+
+    th {
+      padding: 0.6em;
+      border-bottom: 2px solid transparent;
+      color: $accent-white;
+      background-image: linear-gradient($gradient-dark, $gradient-light 100%);
+      font-size: 1.1rem;
+    }
+
+    td {
+      height: 2.5em;
+    }
+  }
+}
